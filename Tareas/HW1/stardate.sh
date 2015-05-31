@@ -5,5 +5,5 @@ echo $1
 grep -iw $1 worldhistory.tsv| awk -F"\t" '{print $2}'
 ############################################
 echo LOOK AT THE FOLLOWING STARS:
-awk -F"," '{if($10>(2015-$1)&&$10<(2015-$1+1)) print $8,$9,$2}' hyg.csv|head -5
+awk -F"," '{if($10>(2015-$1)&&$10<(2015-$1+1)) print $8,$9,$2}' hyg.csv|head -6
 ############################################
