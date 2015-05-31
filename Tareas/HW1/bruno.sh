@@ -1,7 +1,7 @@
 echo Planetas Extrasolares
 echo =====================================
 echo Cantidad de planetas incluidos en el catálogo:
-awk -F"," '{print $1}' kepler.csv | wc -l
+awk -F"," '{print $1}' kepler.csv |sed '1d'| wc -l
 echo =====================================
 echo Planetas extrasolares con masa menor a una centésima de la masa de Júpiter:
 awk -F"," '{if($2>0 && $2<0.01) print $1}' kepler.csv
