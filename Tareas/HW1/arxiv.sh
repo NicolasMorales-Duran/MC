@@ -5,6 +5,6 @@ echo =====================================
 echo keyword: $1
 echo =====================================
 echo Articles found: 
-curl http://arxiv.org/list/cond-mat/new | grep -iw Title: | sed 's/.*>/+/g' | grep $1 | wc -l
-curl http://arxiv.org/list/cond-mat/new | grep -iw Title: | sed 's/.*>/+/g' | grep $1
+curl -s http://arxiv.org/list/cond-mat/new | grep -iw Title: | sed 's/.*>/+/g' | grep $1 | wc -l
+curl -s http://arxiv.org/list/cond-mat/new | grep -iw Title: | sed 's/.*>/+/g' | grep $1
 echo =====================================
