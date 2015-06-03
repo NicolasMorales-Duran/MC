@@ -13,10 +13,15 @@ Semana 2
 + ^(.... ) Expresión regular que representa cuatro caracteres al inicio de una línea con un espacio a continuación.
 
 gnuplot
+
 set term dumb
+
 set parametric
+
 set size ratio 1
+
 set datafile separator ","
+
 plot "$1" using $2:$3
 
 +Este código corresponde al programa en bash que recibe un archivo y dos de sus columnas y hace una gráfica paramétrica de las columnas. Fue probado con el archivo de las lunas de Júpiter.
