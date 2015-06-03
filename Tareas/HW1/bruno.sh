@@ -1,3 +1,4 @@
+#!/bin/bash
 echo Planetas Extrasolares
 echo =====================================
 echo Cantidad de planetas incluidos en el catálogo:

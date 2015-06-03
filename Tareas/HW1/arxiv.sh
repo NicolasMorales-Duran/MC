@@ -1,3 +1,4 @@
+#!/bin/bash
 figlet arXiv
 echo =====================================
 echo Searching the arXiv for the new stuff
