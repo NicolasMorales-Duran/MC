@@ -34,6 +34,7 @@ for file in $(ls)
 do
         gcc -O "$file.out" -C $file #Compila el archivo.
         grep -A 1 "Example" $file #Imprime las líneas deseadas.
+        chmod u+x $file.out # cambia los permisos.
         ./$file.out # Ejecuta el ejecutable.
         read -p "Press any key to continue" #Espera a que el usuario presione una tecla.
         if(a==31) #Solo considera los primeros 30 archivos.
