@@ -37,7 +37,7 @@ do
         chmod u+x $file.out # cambia los permisos.
         ./$file.out # Ejecuta el ejecutable.
         read -p "Press any key to continue" #Espera a que el usuario presione una tecla.
-        if(a==31) #Solo considera los primeros 30 archivos.
+        if((a==31)) #Solo considera los primeros 30 archivos.
         then
                 break
         fi        
