@@ -1,4 +1,5 @@
 #!/bin/bash
+#Grupo de trabajo: Alejandro Hernández A. - Nicolás Morales-Durán.
 let x=0 #Variable que se le pasa a la función.
 while true
 do

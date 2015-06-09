@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Grupo de trabajo: Alejandro Hernández A. - Nicolás Morales-Durán.
 cat $input >> ar.txt
 #Hace 10 veces la desencripción, según lo especificado en el enunciado.
 for i in {1..10}

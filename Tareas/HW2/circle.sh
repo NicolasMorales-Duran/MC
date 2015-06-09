@@ -1,6 +1,6 @@
 #!/bin/bash
-
-gnuplot<<EOF
+#Grupo de trabajo: Alejandro Hernández A. - Nicolás Morales-Durán.
+gnuplot <<EOF
 set term dumb #Hace que la gráfica se vea en la terminal  
 set size ratio 1
 set xrange [-1:1]
