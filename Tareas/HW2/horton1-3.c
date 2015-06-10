@@ -2,6 +2,6 @@
 #include <stdio.h>
 int main(void)
 {
-	printf("\"It's freezing in here,\" he said coldly.\n");
+	printf("\"It's freezing in here,\" he said coldly.\n"); //Imprime la frase deseada.
 	return 0;
 }
