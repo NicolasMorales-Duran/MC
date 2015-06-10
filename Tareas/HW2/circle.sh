@@ -4,7 +4,7 @@ gnuplot <<EOF
 set term dumb #Hace que la gráfica se vea en la terminal  
 set size ratio 1
 set xrange [-1:1]
-set yrange [-1:1] 
+set yrange [-1:1] #Hace que la gráfica se vea del tamaño especificado.
 set parametric 
 unset border #Quita los bordes
 unset xtics #Quita los bordes
