@@ -83,7 +83,7 @@ show()
 ```
 ![Lissajous](https://github.com/NicolasMorales-Duran/MC/blob/master/Lissajous)
 
-Semana 4:  
+Semana 4:  Esta semana aprendimos a utilizar la transformada de Fourier para aproximar funciones y sus aplicaciones al manejo de imágenes. Además aprendimos diversas técnicas de interpolación para hacer ajustes de determinados conjuntos de datos que nos son proporcionados, algo bastante útil para física experimental.
 
 Hands-on 7: 16 de Junio de 2015
 
@@ -118,6 +118,18 @@ Ahora imprimimos la tabla con los 100 valores
 ```python
 for i in range (100):
     print th[i],func(th,nonlfit[0][0])[i]
+```
+
+Hands on 9: 19 de Junio de 2015
+
+Series de Fourier:
+```python
+
+```
+
+DFT y procesamiento de imágenes:
+```python
+
 ```
 
 **Proyecto**: Teniendo en cuenta las diferentes herramientas de aproximación e interpolación vistas me parece que podrían ser útiles para tomar resultados experimentales de compañeros que trabajen por ejemplo en los laboratorios de óptica cuántica o nanomateriales y hacer curvas que se ajusten a sus resultados. En ese sentido podría por ejemplo retomar los datos de cuando vi laboratorio intermedio (Proyecto relacionado con la caracterización de una plataforma piezoeléctrica a partir de un interferómetro de Mach-Zehnder) y hacer un mejor ajuste del que hice en su momento.
