@@ -136,7 +136,7 @@ import matplotlib.pyplot as plt
 from scipy.fftpack import ifft, fft, fftfreq
 %matplotlib inline
 
-arc = np.genfromtxt('https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/master/hands_on/solar/monthrg.dat') #Importamos los datos.
+arc = np.genfromtxt('monthrg.dat') #Importamos los datos.
 ann0 = arc[:,0] #Año en que se toma el dato
 mes0 = arc[:,1] #Mes en que se toma el dato
 d0 = arc[:,2] #Número de días en que se toma el dato
