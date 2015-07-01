@@ -83,7 +83,8 @@ show()
 ```
 ![Lissajous](https://github.com/NicolasMorales-Duran/MC/blob/master/Lissajous)
 
-Hands-0n 6: 12 de Junio de 2015
+Hands-0n 6: 12 de Junio de 2015.
+
 
 Semana 4:  Esta semana aprendimos a utilizar la transformada de Fourier para aproximar funciones y sus aplicaciones al manejo de imágenes. Además aprendimos diversas técnicas de interpolación para hacer ajustes de determinados conjuntos de datos que nos son proporcionados, algo bastante útil para física experimental.
 
@@ -191,6 +192,30 @@ plt.show()
 Semana 6: En esta semana seguimos trabajando con ecuaciones diferenciales pero tomando en cuenta el caso en que estas sean no lineales o consten de un sistema acoplado. 
 
 Hands-on 13: 1 de Julio de 2014
+
+El siguiente código de python demuestra las ecuaciones utilizadas para los métodos de Adams-Bashford.
+
+```python
+from sympy import *
+init_printing(use_unicode = True)
+x = symbols('x')
+
+t,fn,fn1,fn2,h,tn,tn1,tn2 = symbols('t fn fn1 fn2 h tn tn1 tn2') #A segundo orden
+
+tn1 = tn - h
+tn2 = tn - 2*h
+simplify(integrate(fn2*((t-tn1)*(t-tn)/(tn2-tn)/(tn2-tn1)) + fn1*((t-tn)*(t-tn2)/(tn1-tn)/(tn1-tn2)) + fn*((t-tn1)*(t-tn2)/(tn-tn1)/(tn-tn2)),(t,tn,tn+h)))
+
+t,fn,fn1,fn2,fn3,h,tn,tn1,tn2,tn3 = symbols('t fn fn1 fn2 fn3 h tn tn1 tn2 tn3') #A tercer orden
+
+tn1 = tn - h
+tn2 = tn - 2*h
+tn3 = tn - 3*h
+simplify(integrate(  fn3*((t-tn)*(t-tn1)*(t-tn2)/(tn3-tn)/(tn3-tn1)/(tn3-tn2)) 
+                   + fn2*((t-tn)*(t-tn1)*(t-tn3)/(tn2-tn)/(tn2-tn1)/(tn2-tn3)) 
+                   + fn1*((t-tn)*(t-tn2)*(t-tn3)/(tn1-tn)/(tn1-tn2)/(tn1-tn3)) 
+                   + fn*((t-tn1)*(t-tn2)*(t-tn3)/(tn-tn1)/(tn-tn2)/(tn-tn3)),(t,tn,tn+h)))
+```
 
 **Proyecto**: Me parece muy interesante, como ya había mencionado previamente, utilizar lo aprendido en clase para resolver sistemas de ecuaciones que no tienen solución analítica. La razón por la que me gustaría hacerlo es que hace un tiempo desarrollé un proyecto con un profesor y un compañero que consistía en una generalización de la ecuación de Schrodinger-Langevin.
 
