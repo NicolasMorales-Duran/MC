@@ -8,11 +8,11 @@ Herramientas del curso:
 + C
 + Python
 
-Semana 1: Esta semana no asistí a clase por encontrarme en la escuela de Física Matemática.
+Semana 1: Esta semana no asistí a clase por encontrarme en la escuela de Física Matemática pero me adelanté en los temas de Bash.
 
 Semana 2: En esta semana aprendimos a manejar la herramienta gnuplot, a utilizar expresiones regulares para limpiar archivos de texto y elementos básicos de Python y C. 
 
-Hands-on 2: 
+Hands-on 2: 2 de Junio de 2014
 
 + ^(.... ) Expresión regular que representa cuatro caracteres al inicio de una línea con un espacio a continuación.
 
@@ -56,7 +56,7 @@ Hands-on 4: 9 de Junio de 2015
 
 **Proyecto**: Teniendo en cuenta lo visto estas dos semanas en clase me gustaría aplicarlo para tomar un determinado problema en física cuya solución requiera métodos numéricos, solucionarlo y poder hacer gráficas de las soluciones con la herramientas aprendidas y analizar así las soluciones obtenidas. Problemas interesantes en este sentido se pueden encontrar en el campo de la materia condensada cuando se tienen en cuenta procesos no-Markovianos, algo que aún no está muy estudiado.   
 
-Hands-on 5: 10 de Junio de 2014
+Hands-on 5: 10 de Junio de 2015
 
 El siguiente código de python corresponde al tercer punto, para hacer el arreglo de figuras de Lissajous.
 
@@ -82,6 +82,8 @@ for i in range(0,25):
 show()
 ```
 ![Lissajous](https://github.com/NicolasMorales-Duran/MC/blob/master/Lissajous)
+
+Hands-0n 6: 12 de Junio de 2015
 
 Semana 4:  Esta semana aprendimos a utilizar la transformada de Fourier para aproximar funciones y sus aplicaciones al manejo de imágenes. Además aprendimos diversas técnicas de interpolación para hacer ajustes de determinados conjuntos de datos que nos son proporcionados, algo bastante útil para física experimental.
 
@@ -120,16 +122,70 @@ for i in range (100):
     print th[i],func(th,nonlfit[0][0])[i]
 ```
 
-Hands on 9: 19 de Junio de 2015
-
-Series de Fourier:
-```python
-
-```
-
-DFT y procesamiento de imágenes:
-```python
-
-```
-
 **Proyecto**: Teniendo en cuenta las diferentes herramientas de aproximación e interpolación vistas me parece que podrían ser útiles para tomar resultados experimentales de compañeros que trabajen por ejemplo en los laboratorios de óptica cuántica o nanomateriales y hacer curvas que se ajusten a sus resultados. En ese sentido podría por ejemplo retomar los datos de cuando vi laboratorio intermedio (Proyecto relacionado con la caracterización de una plataforma piezoeléctrica a partir de un interferómetro de Mach-Zehnder) y hacer un mejor ajuste del que hice en su momento.
+
+Semana 5: En esta semana aprendimos dos herramientas muy útiles como lo son la integración y la diferenciación numéricas. Al final de la semana comenzamos con el tema de ecuaciones diferenciales y métodos para solucionarlas numéricamente también como Runge-Kutta.
+
+Hands-on 10: 23 de Junio de 2015
+
+El siguiente código en python corresponde a la actividad requerida
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fftpack import ifft, fft, fftfreq
+%matplotlib inline
+
+arc = np.genfromtxt('https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/master/hands_on/solar/monthrg.dat') #Importamos los datos.
+ann0 = arc[:,0] #Año en que se toma el dato
+mes0 = arc[:,1] #Mes en que se toma el dato
+d0 = arc[:,2] #Número de días en que se toma el dato
+ave0 = arc[:,3] #Promedio de manchas solares
+
+ann = []
+mes = []
+ave = []
+for i in range(len(d0)): #Tomamos únicamente las posiciones en que efectivamente hubo toma de datos,
+    if(d0[i]!=0):
+        ann.append(ann0[i])
+        mes.append(mes0[i])
+        ave.append(ave0[i])
+
+ann = [ann[i] + mes[i]/12. for i in range(len(ann))] #Tomamos el año como un decimal, añadiendo el tiempo correspondiente a en qué mes se toman los datos
+
+plt.plot(ann,ave)
+Vemos como varía el ciclo solar
+
+N=len(ann)
+fouave = fft(ave) #transformada de Fourier de los datos
+fre = fftfreq(N, 1./12.) #frecuencia
+
+maxim = max(np.abs(fouave)[fre>0.01]) #Buscamos el máximo sobre todos los datos transformados
+
+a = 0
+for i in range(len(fouave[fre>0.01])):
+    if(np.abs(fouave[fre>0.01][i])==maxim): #Buscamos el índice donde está el máximo
+        a = i
+        
+1/fre[a] #Calculamos el periodo
+
+El periodo solar es de 12 años aproximadamente.
+
+plt.plot(fre,np.abs(fouave),'o') #Graficamos los datos transformados
+plt.xlim(-0.2,0.2)
+plt.show()
+
+fouave[np.abs(fre) >= 0.18 ] = 0 #Eliminamos los datos con  frecuencias mayores a cierto valor para hacer el filtrado pues vemos que los valores significativos están alrededor del cero 
+newave = ifft(fouave) #Hacemos la transformada inversa de Fourier
+
+plt.figure(figsize=(15,15)) #Hacemos la gráfica de la señal original y de la señal filtrada.
+plt.plot(ann,ave,'b',alpha=0.5)
+plt.plot(ann,np.abs(newave),'r',linewidth=1.5)
+plt.show()
+
+plt.figure(figsize=(15,15)) #Graficamos sólo desde el año 1900
+plt.plot(ann[2988:],ave[2988:],'b',alpha=0.5)
+plt.plot(ann[2988:],np.abs(newave[2988:]),'r',linewidth=3.)
+plt.show()
+```
+
