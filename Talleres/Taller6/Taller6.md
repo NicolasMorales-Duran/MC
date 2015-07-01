@@ -30,7 +30,7 @@
 **Solución**
 
 ```
-
+La solución está en el cuaderno de ipython
 ```
 
 
