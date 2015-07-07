@@ -191,7 +191,7 @@ plt.show()
 ```
 Semana 6: En esta semana seguimos trabajando con ecuaciones diferenciales pero tomando en cuenta el caso en que estas sean no lineales o consten de un sistema acoplado. 
 
-Hands-on 13: 1 de Julio de 2014
+Hands-on 13: 1 de Julio de 2015
 
 El siguiente código de python demuestra las ecuaciones utilizadas para los métodos de Adams-Bashford.
 
@@ -223,4 +223,13 @@ Esta ecuación es característica de los sistemas clásicos disipativos y cuánt
 
 La generalización en la que trabajamos considera un acople no lineal en general entre el sistema y el entorno que se puede aplicar a casos concretos como las junturas Josephson o a determinadas moléculas quirales cuya energía viene dada por un doble pozo no simétrico, además se pueden considerar los casos cuando el sistema es Markoviano o no-Markoviano y a partir de las soluciones de las ecuaciones de movimiento obtenidas analizar las diferencias entre ambos casos.
 
-Si efectivamente se pudiese desarrollar este proyecto sería muy interesante para mí ver si los resultados obtenidos teóricamente en efecto concuerdan con las simulaciones computacionales. En todo caso para el tema del proyecto me gustaría tomar algún problema físico que no sea analíticamente soluble y resolverlo numéricamente para analizar las soluciones obtenidas. Menciono en particular el efecto Josephson pues es característico de la mecánica cuántica pero se presenta a escala macroscópica, lo cual rompe el paradigma de que todos los fenómenos cuánticos se dan a escalas muy pequeñas. 
+Si efectivamente se pudiese desarrollar este proyecto sería muy interesante para mí ver si los resultados obtenidos teóricamente en efecto concuerdan con las simulaciones computacionales. En todo caso para el tema del proyecto me gustaría tomar algún problema físico que no sea analíticamente soluble y resolverlo numéricamente para analizar las soluciones obtenidas. Menciono en particular el efecto Josephson pues es característico de la mecánica cuántica pero se presenta a escala macroscópica, lo cual rompe el paradigma de que todos los fenómenos cuánticos se dan a escalas muy pequeñas.
+
+Semana 7: Esta semana aprendimos a utilizar el método de diferencias finitas 
+
+Hands-on 14:7 de Julio de 2015 
+
+Ecuación de Onda con un extremo libre.
+```python
+
+```

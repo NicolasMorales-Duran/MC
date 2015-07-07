@@ -11,9 +11,10 @@ Haga una copia de este archivo en su GitHub en la carpeta /MC/Talleres/. No olvi
 ##Subsección1
 ##Subsección2
 
-a. Lista numerada
-b. Lista numerada
-c. Lista numerada
+ 
+ 1. Lista numerada
+ 2. Lista numerada
+ 3. Lista numerada
 
 + Lista sin numerar
 + Lista sin numerar
@@ -52,6 +53,16 @@ echo $(($1+$2))
 ```
 7. Escriba un reloj en `bash` que utilice `date`, `figlet`, `sleep`, `while` y `clear`.
 **Solución** 
+```
+#!/bin/bash
+
+while true;
+do
+clear 
+date|sed 's/COT .*//g'|figlet
+sleep 1
+done
+```
 
 8. Escriba un script de `bash` que descargue los primeros 150 comics de [xkcd](http://xkcd.com/). Puede hacerse utilizando `for`, `curl`, `grep`, `sed` y `wget`. Para hacerlo debe identificar y aprovechar el patrón en las url de los archivos a descargar.
 **Solución**
